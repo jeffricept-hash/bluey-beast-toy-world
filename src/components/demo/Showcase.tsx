@@ -26,14 +26,17 @@ export function Showcase() {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p) => (
             <article key={p.productId} className="group overflow-hidden rounded-3xl border bg-background">
-              <button onClick={() => { setZoom(false); setOpen({ p, mode: "img" }); }} className="studio-surface block w-full overflow-hidden">
-                <img src={p.imagePath} alt={p.productName} loading="lazy" className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105" />
-              </button>
+              <div className="studio-surface aspect-square w-full overflow-hidden">
+                <ModelViewer src={p.glbPath} alt={`${p.productName} 3D model`} className="h-full w-full" />
+              </div>
               <div className="p-5">
                 <span className={cn("rounded-full px-2.5 py-0.5 text-xs font-semibold", p.brand === "bluey" ? "bg-bluey-soft text-bluey" : "bg-beast-soft text-beast")}>{p.conceptCategory}</span>
                 <h3 className="mt-3 text-xl font-bold">{p.productName}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{p.description}</p>
-                <button onClick={() => setOpen({ p, mode: "3d" })} className="mt-4 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90">Explore in 3D</button>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <button onClick={() => setOpen({ p, mode: "3d" })} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90">Explore in 3D</button>
+                  <button onClick={() => { setZoom(false); setOpen({ p, mode: "img" }); }} className="rounded-full border px-4 py-2 text-sm font-semibold">Original 2D concept</button>
+                </div>
               </div>
             </article>
           ))}
@@ -60,7 +63,7 @@ export function Showcase() {
               <div className="flex items-center justify-between gap-4 text-sm">
                 <p className="text-muted-foreground">{open.p.description}</p>
                 <button onClick={() => setOpen({ p: open.p, mode: open.mode === "3d" ? "img" : "3d" })} className="shrink-0 rounded-full border px-4 py-1.5 font-semibold">
-                  {open.mode === "3d" ? "View rendering" : "Explore in 3D"}
+                  {open.mode === "3d" ? "View 2D concept" : "Explore in 3D"}
                 </button>
               </div>
             </>

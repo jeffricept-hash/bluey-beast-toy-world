@@ -160,7 +160,7 @@ export function Workflow({ brand, setBrand }: { brand: Brand; setBrand: (b: Bran
             <div className="mt-3 grid gap-4 sm:grid-cols-3">
               {items.map((x) => (
                 <div key={x.productId} className="rounded-2xl border p-3">
-                  <img src={x.imagePath} alt={x.productName} loading="lazy" className="studio-surface aspect-square w-full rounded-xl object-cover" />
+                  <div className="studio-surface aspect-square w-full overflow-hidden rounded-xl"><ModelViewer src={x.glbPath} alt={`${x.productName} 3D model`} className="h-full w-full" /></div>
                   <p className="mt-3 font-semibold">{x.variantName}</p>
                   <p className="text-sm text-muted-foreground">{x.description}</p>
                   <p className="mt-2 text-xs"><span className="font-semibold">Why it matters: </span>{x.rationale}</p>
@@ -222,15 +222,15 @@ function PresentStudio({ items }: { items: ProductAsset[] }) {
           </div>
         )}
         {m === "Collection View" && (
-          <div className="studio-surface grid grid-cols-3 gap-2 rounded-2xl border p-6">
-            {items.map((x) => <img key={x.productId} src={x.imagePath} alt={x.productName} className="w-full rounded-xl" />)}
+          <div className="studio-surface grid grid-cols-1 sm:grid-cols-3 gap-2 rounded-2xl border p-6">
+            {items.map((x) => <div key={x.productId} className="aspect-square"><ModelViewer src={x.glbPath} alt={`${x.productName} 3D model`} className="h-full w-full" /></div>)}
           </div>
         )}
         {m === "Executive Review" && (
           <div className="grid gap-4 md:grid-cols-3">
             {items.map((x) => (
               <div key={x.productId} className="rounded-2xl border p-4">
-                <img src={x.imagePath} alt={x.productName} className="studio-surface aspect-square w-full rounded-xl object-cover" />
+                <div className="studio-surface aspect-square w-full overflow-hidden rounded-xl"><ModelViewer src={x.glbPath} alt={`${x.productName} 3D model`} className="h-full w-full" /></div>
                 <p className="mt-3 font-semibold">{x.productName}</p>
                 <p className="mt-1 text-sm"><span className="font-semibold">Rationale: </span>{x.rationale}</p>
                 <p className="mt-1 text-xs text-muted-foreground">Design consideration: confirm licensing guidelines, safety and manufacturability before advancing.</p>
@@ -240,7 +240,7 @@ function PresentStudio({ items }: { items: ProductAsset[] }) {
         )}
         {m === "DTC Concept" && (
           <div className="grid items-center gap-8 rounded-2xl bg-ink p-8 text-ink-foreground md:grid-cols-2">
-            <img src={hero.imagePath} alt={hero.productName} className="rounded-2xl" />
+            <div className="studio-surface aspect-square overflow-hidden rounded-2xl"><ModelViewer src={hero.glbPath} alt={`${hero.productName} 3D model`} className="h-full w-full" /></div>
             <div>
               <p className="text-xs uppercase tracking-widest opacity-70">Hypothetical drop · concept only</p>
               <p className="mt-2 font-display text-4xl font-bold">{hero.productName}</p>
