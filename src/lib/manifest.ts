@@ -1,16 +1,3 @@
-import classicImg from "@/assets/meshy/classic-bluey-collectible.jpg.asset.json";
-import classicGlb from "@/assets/meshy/classic-bluey-collectible.glb.asset.json";
-import adventureImg from "@/assets/meshy/bluey-adventure-edition.jpg.asset.json";
-import adventureGlb from "@/assets/meshy/bluey-adventure-edition.glb.asset.json";
-import mysteryImg from "@/assets/meshy/bluey-mystery-edition.jpg.asset.json";
-import mysteryGlb from "@/assets/meshy/bluey-mystery-edition.glb.asset.json";
-import arenaImg from "@/assets/meshy/modular-challenge-arena.jpg.asset.json";
-import arenaGlb from "@/assets/meshy/modular-challenge-arena.glb.asset.json";
-import stationImg from "@/assets/meshy/precision-challenge-station.jpg.asset.json";
-import stationGlb from "@/assets/meshy/precision-challenge-station.glb.asset.json";
-import vaultImg from "@/assets/meshy/final-vault.jpg.asset.json";
-import vaultGlb from "@/assets/meshy/final-vault.glb.asset.json";
-
 export type Brand = "bluey" | "beast";
 
 /** Centralized asset manifest. Prompts / creation times intentionally left blank — not supplied. */
@@ -39,8 +26,8 @@ export const products: ProductAsset[] = [
     brand: "bluey",
     conceptCategory: "Bluey Collectibles",
     assetType: "Concept Render + Interactive 3D",
-    imagePath: classicImg.url,
-    glbPath: classicGlb.url,
+    imagePath: "/meshy/classic-bluey-collectible.jpg",
+    glbPath: "/meshy/classic-bluey-collectible.glb",
     renderAngle: "Front, studio",
     variantName: "Classic Edition",
     description: "Flocked-finish hero figure that keeps Bluey's recognizable proportions and palette.",
@@ -54,8 +41,8 @@ export const products: ProductAsset[] = [
     brand: "bluey",
     conceptCategory: "Bluey Collectibles",
     assetType: "Concept Render + Interactive 3D",
-    imagePath: adventureImg.url,
-    glbPath: adventureGlb.url,
+    imagePath: "/meshy/bluey-adventure-edition.jpg",
+    glbPath: "/meshy/bluey-adventure-edition.glb",
     renderAngle: "Front, studio",
     variantName: "Adventure Edition",
     description: "Costume and accessory variation exploring a themed play pattern.",
@@ -68,8 +55,8 @@ export const products: ProductAsset[] = [
     brand: "bluey",
     conceptCategory: "Bluey Collectibles",
     assetType: "Concept Render + Interactive 3D",
-    imagePath: mysteryImg.url,
-    glbPath: mysteryGlb.url,
+    imagePath: "/meshy/bluey-mystery-edition.jpg",
+    glbPath: "/meshy/bluey-mystery-edition.glb",
     renderAngle: "Front, studio",
     variantName: "Premium Mystery",
     description: "Iridescent, gold-accented chase figure exploring a premium finish.",
@@ -82,8 +69,8 @@ export const products: ProductAsset[] = [
     brand: "beast",
     conceptCategory: "Beast Games",
     assetType: "Concept Render + Interactive 3D",
-    imagePath: arenaImg.url,
-    glbPath: arenaGlb.url,
+    imagePath: "/meshy/modular-challenge-arena.jpg",
+    glbPath: "/meshy/modular-challenge-arena.glb",
     renderAngle: "Isometric",
     variantName: "Arena Base",
     description: "Hex-tile playset with swappable challenge pods around a central logo stage.",
@@ -96,8 +83,8 @@ export const products: ProductAsset[] = [
     brand: "beast",
     conceptCategory: "Beast Games",
     assetType: "Concept Render + Interactive 3D",
-    imagePath: stationImg.url,
-    glbPath: stationGlb.url,
+    imagePath: "/meshy/precision-challenge-station.jpg",
+    glbPath: "/meshy/precision-challenge-station.glb",
     renderAngle: "Isometric",
     variantName: "Challenge Pod",
     description: "Skill-based station concept exploring components and layout.",
@@ -110,8 +97,8 @@ export const products: ProductAsset[] = [
     brand: "beast",
     conceptCategory: "Beast Games",
     assetType: "Concept Render + Interactive 3D",
-    imagePath: vaultImg.url,
-    glbPath: vaultGlb.url,
+    imagePath: "/meshy/final-vault.jpg",
+    glbPath: "/meshy/final-vault.glb",
     renderAngle: "Isometric",
     variantName: "Endgame Set",
     description: "Prize-vault finale with coin rewards and a lock-wheel centerpiece.",
